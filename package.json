@@ -2,9 +2,10 @@
   "name": "atnshop",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": " app.js",
   "scripts": {
-    "start":"nodemon --inspect app.js",
+    "watch":"node-sass  --watch scss/app.scss  public/css/app.css",
+    "start": "nodemon --inspect app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,9 +19,16 @@
   },
   "homepage": "https://github.com/NamHien01/ATNSHop#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "bootstrap": "^5.1.3",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4",
+    "hbs": "^4.1.2",
+    "mongodb": "^4.1.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.13"
+    "morgan": "^1.10.0",
+    "node-sass": "^6.0.1",
+    "nodemon": "^2.0.13",
+    "sass": "^1.43.2"
   }
 }

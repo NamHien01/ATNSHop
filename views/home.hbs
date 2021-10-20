@@ -1,0 +1,66 @@
+
+{{!-- homepage --}}
+<div id="mycarousel" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#mycarousel" data-slide-to="1"></li>
+    <li data-target="#mycarousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="https://phamdo18.com/wp-content/uploads/2020/10/tong-hop-hinh-nen-one-piece-dep-nhat-hien-nay3-scaled.jpg" alt="One Piece">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://c4.wallpaperflare.com/wallpaper/738/62/544/naruto-chidori-naruto-naruto-uzumaki-rasengan-naruto-sasuke-uchiha-hd-wallpaper-preview.jpg" alt="Naruto">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="https://static2.vieon.vn/vieplay-image/thumbnail_v4/2021/08/02/1ytsftc0_1920x1080-thanhguomdietquy.jpg" alt="Thanh gươm diệt quỷ" >
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+<script>$('.carousel').carousel({
+  interval: 20
+})</script>
+</div>
+
+{{!-- //search --}}
+
+  <div class="home_page"> 
+        <div class="input-group">
+          <div class="input-group-prepend col-md-2 px-0 mt-2"><select class="custom-select text-capitalize"><option href="/">All Products</option><option value="{{product.slug}}">Sony</option><option value="5fed4001e3949b23089a0cac">LG</option><option value="5fed4805e3949b23089a0cad">Apple</option></select></div>
+          <form method="POST" action="/search"class="mt-2 col-md-8 px-0">
+            <input type="text" class="form-control" list="title_product"  name="txtName"placeholder="Enter name product">
+          </form>
+          <div class="input-group-prepend col-md-2 px-0 mt-2"><select class="custom-select text-capitalize"><option value="-createdAt">Newest</option><option value="oldest">Oldest</option><option value="-sold">Best sales</option><option value="-price">Price: Hight-Low</option><option value="price">Price: Low-Hight</option></select></div>
+        </div>
+      </div>
+
+    {{!-- show products --}}
+        <div class="products">
+          <div class="mt-4">
+             <div class="row">
+               {{#each products}}
+          <div class="card" style="width:21rem; ; margin:1rem">
+            <img class="card-img-top" style="width:310px;height:309.15px" src="{{image}}">
+            <div class="card-body">
+               <h5 class="card-title text-capitalize" title="brow hair">{{name}}</h5>
+               <div class="row justify-content-between mx-0"><h6 class="text-danger">Price: {{price}}</h6>
+              </div>
+              <div class="row justify-content-between mx-0">
+                <a class="btn btn-info" style="margin-right:5px;flex:1" href="/product/600110e7f0013c0aac35ff17">View</a>
+                <a class="btn btn-success" style="margin-right:5px;flex:1" href="/edit/{{_id}}">Edit</a>
+                <a class="btn btn-danger" style="margin-right:5px;flex:1" onclick="return confirm('Are your sure?')" href="/delete/{{_id}}">Delete</a>
+            </div>
+               </div>
+           </div>
+           {{/each}}
+          </div>
+            </div>
+        </div>
