@@ -34,12 +34,13 @@
 
   <div class="home_page"> 
         <div class="input-group">
-          <div class="input-group-prepend col-md-2 px-0 mt-2"><select class="custom-select text-capitalize"><option href="/">All Products</option><option value="{{product.slug}}">Sony</option><option value="5fed4001e3949b23089a0cac">LG</option><option value="5fed4805e3949b23089a0cad">Apple</option></select></div>
+          <form method="POST" action="/category"class="col-md-4 px-0 mt-2">
+            <input type="text" class="form-control" list="title_product"  name="txtName" placeholder="Enter name categories">
+          </form>
           <form method="POST" action="/search"class="mt-2 col-md-8 px-0">
             <input type="text" class="form-control" list="title_product"  name="txtName"placeholder="Enter name product">
           </form>
-          <div class="input-group-prepend col-md-2 px-0 mt-2"><select class="custom-select text-capitalize"><option value="-createdAt">Newest</option><option value="oldest">Oldest</option><option value="-sold">Best sales</option><option value="-price">Price: Hight-Low</option><option value="price">Price: Low-Hight</option></select></div>
-        </div>
+          
       </div>
 
     {{!-- show products --}}
@@ -50,11 +51,10 @@
           <div class="card" style="width:21rem; ; margin:1rem">
             <img class="card-img-top" style="width:310px;height:309.15px" src="{{image}}">
             <div class="card-body">
-               <h5 class="card-title text-capitalize" title="brow hair">{{name}}</h5>
-               <div class="row justify-content-between mx-0"><h6 class="text-danger">Price: {{price}}</h6>
+               <h5 class="card-title text-capitalize">{{name}}</h5>
+               <div class="row justify-content-between mx-0"><h6 class="text-danger">Price: {{price}}$</h6>
               </div>
               <div class="row justify-content-between mx-0">
-                <a class="btn btn-info" style="margin-right:5px;flex:1" href="/product/600110e7f0013c0aac35ff17">View</a>
                 <a class="btn btn-success" style="margin-right:5px;flex:1" href="/edit/{{_id}}">Edit</a>
                 <a class="btn btn-danger" style="margin-right:5px;flex:1" onclick="return confirm('Are your sure?')" href="/delete/{{_id}}">Delete</a>
             </div>

@@ -14,13 +14,20 @@
      <h5>Name</h5>
     <div class="input-group mb-3">
      <input type="text" name="txtName" value="{{product.name}}" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-     <span style="color:red">{{ nameError}}</span>
+     <span style="color:red">{{nameError}}</span>
     </div>
     <h5>Price</h5>
      <div class="input-group mb-3">
      <input type="text" name="txtPrice" value="{{product.price}}" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
      <span style="color:red">{{modelError1}}</span>
      </div>
+
+     <h5>Category</h5>
+     <div class="input-group mb-3">
+     <input type="text" name="txtCategory" value="{{product.category}}" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+     <span style="color:red"></span>
+     </div>
+
         <h5>Image Url</h5>
       <div class="input-group mb-3">
      <input type="text" name="txtImage" value="{{product.image}}" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">

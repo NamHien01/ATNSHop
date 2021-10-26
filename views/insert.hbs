@@ -12,17 +12,25 @@
         <h5>Product Name</h5>
         <div class="input-group mb-3">
           <input type="text" name="txtName" id="txtName" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-          
+          <label style="color: red;">{{nameError}}</label>
         </div>
         <h5>Price</h5>
         <div class="input-group mb-3">
             <input type="text" name="txtPrice" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <label style="color: red;">{{priceError}}</label>
+        </div>
+        <h5>Category</h5>
+        <div class="input-group mb-3">
+            <input type="text" name="txtCategory" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <label style="color: red;">{{categoryError}}</label>
         </div>
         <h5>Image Url</h5>
         <div class="input-group mb-3">
             <input type="text" name="txtImage" id="txtImage" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <br>
+            <label style="color: red;">{{urlError}}</label>
         </div>
-         <span style="color: red;">{{urlError}}</span>
+         
         <button type="submit" value="Insert" class="btn btn-outline-primary">ADD</button>
     </form>
 </body>

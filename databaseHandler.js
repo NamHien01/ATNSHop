@@ -43,4 +43,10 @@ async function dosearch(condition,collectionName){
     var results = await dbo.collection(collectionName).find({name:searchCondition}).toArray();
     return results;
 }
-module.exports = {insertToDB,getAll,deleteObject,getDocumentById,updateDocument,dosearch}
+async function category(condition,collectionName){
+    const dbo = await getDatabase();
+    const categoryCondition = new RegExp(condition,'i')
+    var results = await dbo.collection(collectionName).find({category:categoryCondition}).toArray();
+    return results;
+}
+module.exports = {insertToDB,getAll,deleteObject,getDocumentById,updateDocument,dosearch,category}
